@@ -1,0 +1,694 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  box-sizing: border-box;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(26, 25, 25);
+  color: white;
+}
+
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/bg.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  padding: 10px 10%;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: black;
+  padding: 0 50px;
+
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: rgb(58, 58, 152);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.headerText {
+  margin-top: 20%;
+  font-size: 30px;
+
+}
+
+.headerText h1 {
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+/* Typewriter effect  ************************************************************/
+@keyframes typing {
+
+  0.0000%,
+  48.075% {
+    content: "";
+  }
+
+  1.9230%,
+  46.152% {
+    content: "N";
+  }
+
+  3.846%,
+  44.229% {
+    content: "Ni";
+  }
+
+  5.769%,
+  42.306% {
+    content: "Nik";
+  }
+
+  7.692%,
+  40.383% {
+    content: "Niko";
+  }
+
+  9.615%,
+  38.46% {
+    content: "Nikol";
+  }
+
+  11.538%,
+  36.537% {
+    content: "Nikola";
+  }
+
+  13.461%,
+  34.614% {
+    content: "Nikola ";
+  }
+
+  15.384%,
+  32.691% {
+    content: "Nikola S";
+  }
+
+  17.307%,
+  30.768% {
+    content: "Nikola Si";
+  }
+
+  19.23%,
+  28.854% {
+    content: "Nikola Sij";
+  }
+
+  21.153%,
+  26.922% {
+    content: "Nikola Sija";
+  }
+
+  23.076%,
+  24.999% {
+    content: "Nikola Sijan";
+  }
+
+  50.000%,
+  98.075% {
+    content: "";
+  }
+
+  51.923%,
+  96.152% {
+    content: "W";
+  }
+
+  53.846%,
+  95.229% {
+    content: "We";
+  }
+
+  55.769%,
+  92.306% {
+    content: "Web";
+  }
+
+  57.692%,
+  90.383% {
+    content: "Web ";
+  }
+
+  59.615%,
+  88.46% {
+    content: "Web D";
+  }
+
+  61.538%,
+  86.537% {
+    content: "Web Dev";
+  }
+
+  63.461%,
+  84.614% {
+    content: "Web Deve";
+  }
+
+  65.384%,
+  82.691% {
+    content: "Web Devel";
+  }
+
+  67.307%,
+  80.768% {
+    content: "Web Develo";
+  }
+
+  69.23%,
+  78.845% {
+    content: "Web Develop";
+  }
+
+  71.153%,
+  76.922% {
+    content: "Web Develope";
+  }
+
+  73.076%,
+  74.999% {
+    content: "Web Developer";
+  }
+
+
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 4.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+
+    0%,
+    100% {
+      content: "Nikola Sijan";
+    }
+
+    50% {
+      content: "Web Developer";
+    }
+
+  }
+
+  .typewriter::before {
+    content: "Nikola Sijan";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/************************************************************/
+
+
+/*About me */
+
+#about {
+  /* padding: 80px 0; */
+  color: rgb(183, 180, 180);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+  height: 40rem;
+  object-fit: cover;
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+
+}
+
+.sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+}
+
+.tab-titles {
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: rgb(58, 58, 152);
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+  width: 50%;
+}
+
+.tab-contents ul li {
+
+  margin: 10px 0;
+}
+
+.tab-contents {
+  display: none;
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+.skills-about {
+  display: flex;
+  gap: 50px;
+}
+
+/* ----------------Portfolio--------------- */
+
+/* #portfolio{
+  padding: 50px 0;
+} */
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+
+}
+
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(58, 58, 152));
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+
+.layer h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+
+}
+
+.d-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.layer .d-flex a {
+  margin-top: 20px;
+  text-decoration: none;
+  color: rgb(58, 58, 152);
+  background: white;
+  font-size: 18px;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  height: 100%;
+}
+
+/* ******************Countact************************************+*/
+
+.contact-left {
+  flex-basis: 35%;
+}
+
+.contact-right {
+  flex-basis: 60%;
+}
+
+.contact-left p {
+  margin-top: 30px;
+}
+
+.contact-left p i {
+  color: rgb(58, 58, 152);
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons {
+  margin-top: 30px;
+
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: rgb(183, 180, 180);
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+  color: rgb(58, 58, 152);
+  transform: translateY(-5px);
+}
+
+.btn {
+  display: inline-block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid rgb(58, 58, 152);
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: rgb(58, 58, 152);
+}
+
+.btn2 {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.0);
+  display: inline-block;
+  margin-top: 20px;
+  width: fit-content;
+  border: 1px solid rgb(58, 58, 152);
+  padding: 14px 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.5s;
+  font-size: 18px;
+}
+
+.btn2:hover {
+  background: rgb(58, 58, 152);
+}
+
+.contact-right form {
+  width: 100%;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background-color: rgb(43, 43, 43);
+  padding: 15px;
+  margin: 15px 0;
+  color: white;
+  border-radius: 6px;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+  font-weight: 300;
+  margin-top: 20px;
+  background-color: black;
+}
+
+/* *******************CSS for small screens************************** */
+
+nav .bi {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+
+  .headerText {
+    margin-top: 100%;
+    font-size: 16px;
+  }
+
+  .headerText h1 {
+    font-size: 30px;
+  }
+
+  nav .bi {
+    display: block;
+    font-size: 25px;
+  }
+
+  nav ul {
+    background-color: rgb(58, 58, 152);
+    position: fixed;
+    top: 0;
+    right: -180px;
+    width: 180px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .bi {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+
+  .sub-title {
+    font-size: 40px;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+
+  .about-col-2 {
+    font-size: 14px;
+  }
+
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+
+  .work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+
+
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1160px) {
+  .layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(58, 58, 152));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 10px;
+    transition: height 0.5s;
+  }
+
+  .layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+
+  }
+
+  .d-flex {
+    display: flex;
+    gap: 20px;
+  }
+
+  .layer .d-flex a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(58, 58, 152);
+    background: white;
+    font-size: 12px;
+    line-height: 45px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .work:hover img {
+    transform: scale(1.1);
+  }
+
+  .work:hover .layer {
+    height: 100%;
+  }
+}
+
+#msg {
+  color: #61b752;
+  margin-top: 10px;
+  display: block;
+}
